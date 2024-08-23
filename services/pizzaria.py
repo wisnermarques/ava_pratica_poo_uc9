@@ -39,7 +39,7 @@ def pizzaria(numero_pedido):
       pizza.calcular_preco()
       pedido.adicionar_pizza(pizza)
     
-    escolha = input('Deseja adicionar mais algum item no pedio [S - Sim, N - Não]:' )
+    escolha = input('Deseja adicionar mais algum item no pedido [S - Sim, N - Não]:' )
     if escolha.upper() == 'N':
       break
 

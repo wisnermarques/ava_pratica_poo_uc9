@@ -7,9 +7,9 @@ class PizzaEspecial(Pizza):
     
     def calcular_adicional(self):
         preco_adicional = 2
-        total = 0
-        for item in self.adicionais:
-            total += preco_adicional
+        total = len(self.adicionais) * preco_adicional
+        # for item in self.adicionais:
+        #     total += preco_adicional
         
         return total
     

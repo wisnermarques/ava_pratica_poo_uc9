@@ -17,7 +17,7 @@ class Pedido:
         return total
     
     def detalhes_pedido(self):
-        print('\n ##### Itens do pedido #####')
+        print('\n ##### Itens do pedido #####') 
         for pizza in self.pizzas:
             pizza.detalhes()
             if isinstance(pizza, PizzaEspecial):
