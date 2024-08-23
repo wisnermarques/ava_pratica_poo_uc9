@@ -1,4 +1,4 @@
-from pizza import Pizza
+from .pizza import Pizza
 
 class PizzaEspecial(Pizza):
     def __init__(self, nome: str, tamanho: str, adicionais: list):
@@ -15,7 +15,7 @@ class PizzaEspecial(Pizza):
     
     def detalhes_especiais(self):
         print(f'Adicionais: {self.adicionais}')
-        print(f'Preço dos adicionais: {self.calcular_adicional()}')
+        print(f'Preço dos adicionais: R${self.calcular_adicional():.2f}')
     
 # pizza = PizzaEspecial('Calabresa', 'M', ['Muçarela', 'Chedder'])
 

@@ -1,5 +1,4 @@
-from pizza_especial import PizzaEspecial
-from pizza import Pizza
+from .pizza_especial import PizzaEspecial
 
 class Pedido:
     def __init__(self, numero_pedido: int):
@@ -18,7 +17,14 @@ class Pedido:
         return total
     
     def detalhes_pedido(self):
+        print('\n ##### Itens do pedido #####')
+        for pizza in self.pizzas:
+            pizza.detalhes()
+            if isinstance(pizza, PizzaEspecial):
+                pizza.detalhes_especiais()
+            print('')
         print(f'Total do Pedido #{self.numero_pedido}: R${self.total_pedido():.2f}')
+        print('')
     
 # Instanciando as pizzas
 # pizza1 = Pizza('Calabresa', 'M')

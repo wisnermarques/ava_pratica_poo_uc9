@@ -1,34 +1,19 @@
-from models.pizza import Pizza
-from models.pizza_especial import PizzaEspecial
+from services.pizzaria import pizzaria
 
-lista_pizzas = ['Calabresa', 'Portuguesa', 'Napolitana']
-lista_adicionais = ['Muçarela', 'Pimentão', 'Ovo']
-adicionais = []
-pizzas = []
-print('''
-      Preços: P - 10, M - 20, G - 30
-      1- Calabresa
-      2- Portuguesa
-      3- Napolitana
-      ''')
-op = input('Escolha a pizza: ')
-tamanho = input('Tamanho [P, M, G]: ')
+def main():
+    numero_pedido = 1
+    while True:
+        print('')
+        opcao = int(input('1- Novo Pedido\n'
+            '2- Sair\n'
+            'Escolha a opção desejada: '
+    ))  
+        
+        if opcao == 1:
+            pizzaria(numero_pedido)
+            numero_pedido += 1
+        else:
+            break
 
-escolha = input('Deseja algum adicional [S - Sim, N - Não]?  ')
-if escolha.upper() == 'S':
-    while escolha.upper() == 'S':
-        adicional = input('''Informe o adicional: 
-                          1- Muçarela
-                          2- Pimentão
-                          3- Ovo
-                          ''')
-        lista_adicionais.append(adicional)
-        escolha = input('Deseja mais algum adicional [S - Sim, N - Não]?  ')
-    pizza = PizzaEspecial(pizzas[op-1], tamanho, lista_adicionais)
-    pizza.calcular_preco()
-else:
-    pizza = Pizza(pizzas[op-1], tamanho)
-    pizza.calcular_preco()
-
-
-
+if __name__ == '__main__':
+    main()
